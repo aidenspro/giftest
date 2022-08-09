@@ -1,5 +1,5 @@
 import React from "react";
-import karathrow from '/gifs/karathrow.gif'
+import karathrow from './gifs/karathrow.gif'
 
 import "./style.css";
 
