@@ -12,6 +12,7 @@ html {
 }
 
 .button{
+  position: absolute;
   margin: 50%;
   width: 200px;
   height: 200px;
@@ -19,14 +20,24 @@ html {
   border-radius: 100px;
   outline: black;
   cursor: pointer;
-  transition: all 200ms linear;
+  transition: all 800ms linear;
   background-color: #25c1e2;
   
+}
+
+.trail{
+position: absolute;
+margin: 50%;
+translate: 90px;
+width: 20px;
+height: 220px;
+background-color: #25c1e2;
+transition: all 800ms linear;
 }
 .button:hover {
   box-shadow: inset 0px 0px 0px 8em #45c223;
 }
 .button:focus{
-  transform: translatey(-1000px)
+  
 }
 

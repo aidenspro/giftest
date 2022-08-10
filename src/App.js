@@ -1,5 +1,6 @@
 import React from 'react';
-import karathrow from './gifs/karathrow.gif';
+import React, { useState, useEffect, useRef, createRef } from 'react';
+
 
 import './style.css';
 
@@ -18,10 +19,31 @@ export default function App() {
     <img src={'https://media.giphy.com/media/v2hLEwIzxOBkluebmT/giphy.gif'} alt="loading..." />,
     <img src={'https://media.giphy.com/media/VhepGm3ABdK2Yy0dj4/giphy.gif'} alt="loading..." />,
   ]
+  const ref = useRef();
+  const ref2 = useRef();
+  const [position, setPosition] = useState([100]);
+  const [height, setHeight] = useState([220]);
+  const handleOnClick = () => {
+    ref.current.style = "transform: translatey(" + position + "px)" 
+    setPosition(parseInt(position) + 500)
+    setHeight(parseInt(height) + 500)
+    ref2.current.style = "height:" + height + "px" 
+    console.log(position)
+    console.log("height:" + height + "px" )
+  };
+
   return (
-    <div>
-    
-      <button class="button">Start</button>
+    <div> 
+
+      <button 
+       ref={ref2}
+      className="trail"></button> 
+      <button 
+      ref={ref}
+      onClick={() => handleOnClick()}
+      className="button">
+      Start
+      </button>
  
     </div>
   );
