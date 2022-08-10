@@ -21,17 +21,18 @@ export default function App() {
   ]
   const ref = useRef();
   const ref2 = useRef();
-  const [position, setPosition] = useState([100]);
-  const [height, setHeight] = useState([220]);
+  const [position, setPosition] = useState([2000]);
+  const [height, setHeight] = useState([2000]);
   const handleOnClick = () => {
     ref.current.style = "transform: translatey(" + position + "px)" 
-    setPosition(parseInt(position) + 500)
-    setHeight(parseInt(height) + 500)
+    setPosition(parseInt(position) + 2000)
+    setHeight(parseInt(height) + 2000)
     ref2.current.style = "height:" + height + "px" 
     console.log(position)
     console.log("height:" + height + "px" )
+    ref.current.scrollIntoView({ behavior: 'smooth' })
   };
-
+  
   return (
     <div> 
 
