@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef, createRef } from 'react';
 
 
 import './style.css';
-
+var pagePos = 0;
 export default function App() {
   const oki = [
     <img src={'https://media.giphy.com/media/CFn3vsbR2YWVNOFjpH/giphy.gif'} alt="loading..." />,
@@ -21,40 +21,34 @@ export default function App() {
   ]
   const ref = useRef();
   const ref2 = useRef();
-  const [position, setPosition] = useState([200]);
-  const [height, setHeight] = useState([200]);
-  
+  const [position, setPosition] = useState([2000]);
+  const [height, setHeight] = useState([2000]);
+
   const handleOnClick = () => {
-    for(let i = 0;i<10;i++){
+    
     ref.current.style = "transform: translatey(" + position + "px)" 
-    setPosition(parseInt(position) + 200)
-    setHeight(parseInt(height) + 200)
+    setPosition(parseInt(position) + 2000)
+    setHeight(parseInt(height) + 2000)
     ref2.current.style = "height:" + height + "px" 
+    console.log(position)
     window.scrollBy({
-      top: 600,
+      top: 2000,
       left: 0,
       behavior: 'smooth'
     }); 
-    console.log(position)
-  }
+    
   };
 
-  const handleOnClick2 = () => {
-
+  const handleOnClickTest = () => {
+    Math.floor(Math.random() * 4)
   }
 
-  useEffect(() => {
-
-    },[])
-
   return (
-    <div> 
+    <div className='main'> 
 
       <button 
        ref={ref2}
-       onClick={() => handleOnClick2()}
       className="trail">
-     
       </button> 
       <button 
       ref={ref}
@@ -63,6 +57,8 @@ export default function App() {
       Start
       </button>
  
+      <button className="test">
+       </button>
     </div>
   );
 }

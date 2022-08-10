@@ -1,6 +1,7 @@
 h1, p {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow: hidden; /* Hide scrollbars */
 }
 
 html {
@@ -9,6 +10,10 @@ html {
 
 .oki1 {
   background-image: url('https://media.giphy.com/media/CFn3vsbR2YWVNOFjpH/giphy.gif');
+}
+
+.main{
+  overflow: hidden; /* Hide scrollbars */
 }
 
 .button{
@@ -20,20 +25,35 @@ html {
   border-radius: 100px;
   outline: black;
   cursor: pointer;
-  transition: all 800ms linear;
+  transition: all 400ms linear;
   background-color: #25c1e2;
   
 }
-
+.test{
+  position: absolute;
+  margin: 50%;
+  width: 20px;
+  height: 20px;
+  translate: 90px 20000px;
+}
 .trail{
 position: absolute;
 margin: 50%;
 translate: 90px;
 width: 20px;
-height: 220px;
+height: 200px;
 background-color: #25c1e2;
-transition: all 800ms linear;
+transition: all 400ms linear;
 }
+.trailright{
+  position: absolute;
+  margin: 50%;
+  translate: 0px 90px;
+  width: 200px;
+  height: 20px;
+  background-color: #25c1e2;
+  transition: all 400ms linear;
+  }
 .button:hover {
   box-shadow: inset 0px 0px 0px 8em #45c223;
 }
