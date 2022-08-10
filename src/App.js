@@ -21,24 +21,41 @@ export default function App() {
   ]
   const ref = useRef();
   const ref2 = useRef();
-  const [position, setPosition] = useState([2000]);
-  const [height, setHeight] = useState([2000]);
-  const handleOnClick = () => {
-    ref.current.style = "transform: translatey(" + position + "px)" 
-    setPosition(parseInt(position) + 2000)
-    setHeight(parseInt(height) + 2000)
-    ref2.current.style = "height:" + height + "px" 
-    console.log(position)
-    console.log("height:" + height + "px" )
-    ref.current.scrollIntoView({ behavior: 'smooth' })
-  };
+  const [position, setPosition] = useState([200]);
+  const [height, setHeight] = useState([200]);
   
+  const handleOnClick = () => {
+    for(let i = 0;i<10;i++){
+    ref.current.style = "transform: translatey(" + position + "px)" 
+    setPosition(parseInt(position) + 200)
+    setHeight(parseInt(height) + 200)
+    ref2.current.style = "height:" + height + "px" 
+    window.scrollBy({
+      top: 600,
+      left: 0,
+      behavior: 'smooth'
+    }); 
+    console.log(position)
+  }
+  };
+
+  const handleOnClick2 = () => {
+
+  }
+
+  useEffect(() => {
+
+    },[])
+
   return (
     <div> 
 
       <button 
        ref={ref2}
-      className="trail"></button> 
+       onClick={() => handleOnClick2()}
+      className="trail">
+     
+      </button> 
       <button 
       ref={ref}
       onClick={() => handleOnClick()}
