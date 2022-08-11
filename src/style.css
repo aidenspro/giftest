@@ -29,17 +29,38 @@ html {
   background-color: #25c1e2;
   
 }
-.test{
+.testdown{
   position: absolute;
   margin: 50%;
   width: 20px;
   height: 20px;
   translate: 90px 20000px;
 }
+.testup{
+  position: absolute;
+  margin: 50%;
+  width: 20px;
+  height: 20px;
+  translate: 90px -20000px;
+}
+.testleft{
+  position: absolute;
+  margin: 50%;
+  width: 20px;
+  height: 20px;
+  translate: -20000px 0px;
+}
+.testright{
+  position: absolute;
+  margin: 50%;
+  width: 20px;
+  height: 20px;
+  translate: 20000px 0px;
+}
 .trail{
 position: absolute;
 margin: 50%;
-translate: 90px;
+translate: -90px;
 width: 20px;
 height: 200px;
 background-color: #25c1e2;
@@ -48,7 +69,7 @@ transition: all 400ms linear;
 .trailright{
   position: absolute;
   margin: 50%;
-  translate: 0px 90px;
+  translate: 0px -90px;
   width: 200px;
   height: 20px;
   background-color: #25c1e2;

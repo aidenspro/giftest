@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef, createRef } from 'react';
 
 
 import './style.css';
-var pagePos = 0;
+var translation = 2000;
 export default function App() {
   const oki = [
     <img src={'https://media.giphy.com/media/CFn3vsbR2YWVNOFjpH/giphy.gif'} alt="loading..." />,
@@ -24,7 +24,7 @@ export default function App() {
   const [position, setPosition] = useState([2000]);
   const [height, setHeight] = useState([2000]);
 
-  const handleOnClick = () => {
+  /*const handleOnClick = () => {
     
     ref.current.style = "transform: translatey(" + position + "px)" 
     setPosition(parseInt(position) + 2000)
@@ -38,10 +38,44 @@ export default function App() {
     }); 
     
   };
+*/
 
-  const handleOnClickTest = () => {
-    Math.floor(Math.random() * 4)
+const handleOnClick = () => {
+  
+    var num = Math.floor(Math.random() * 4)
+
+    if(num <= 1){
+      ref2.current.className="trailright"
+      num == 0 ? translation *= 1 : translation *= -1
+      window.scrollBy({
+        top: 0,
+        left: translation,
+        behavior: 'smooth'
+      }); 
+      ref2.current.style = "width:" + height + "px" 
+    }else{
+      ref2.current.className="trail"
+      num == 2 ? translation *= 1 : translation *= -1
+      window.scrollBy({
+        top: translation,
+        left: 0,
+        behavior: 'smooth'
+      }); 
+      ref2.current.style = "height:" + height + "px" 
+    }
+    console.log(translation)
+
+    ref.current.style = "transform: translatey(" + position + "px)" 
+    setPosition(parseInt(position) + translation)
+    setHeight(parseInt(height) + translation)
+    
+    console.log(position)
+
+    
+
   }
+
+  
 
   return (
     <div className='main'> 
@@ -57,7 +91,13 @@ export default function App() {
       Start
       </button>
  
-      <button className="test">
+      <button className="testup">
+       </button>
+       <button className="testdown">
+       </button>
+       <button className="testleft">
+       </button>
+       <button className="testright">
        </button>
     </div>
   );
